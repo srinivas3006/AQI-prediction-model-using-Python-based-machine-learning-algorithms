@@ -9,7 +9,7 @@ model1 = pickle.load(open("finalized_model_regressor.pkl", "rb"))
 @app.route("/")
 @cross_origin()
 def home():
-    return render_template("home.html")
+    return render_template("index.html")
 
 @app.route("/predict", methods=["GET", "POST"])
 @cross_origin()
