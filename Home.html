@@ -1,0 +1,216 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AQI Prediction</title>
+
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- css -->
+    <link rel="stylesheet" href="static/css/styles.css">
+
+</head>
+
+<body>
+
+    <!-- As a heading -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Air Quality Index Prediction Using Machine Learning</a>
+            </div>
+        </div>
+    </nav>
+
+    <br><br><br>
+
+
+    <div class="container">
+
+        <form action="\predict" method="post">
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Particulate Matter 2.5-micrometer in ug / m3 (PM2)</h5>
+                            <!-- Departure -->
+                            <input type="number" name="PM2" id="PM2" required="required" min="0" max="1000">
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Particulate Matter 10-micrometer in ug / m3 (PM10)</h5>
+                            <!-- Arrival -->
+                            <input type="text" name="PM10" id="PM10" required="required" min="0" max="1000">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Source -->
+                            <h5 class="card-title">Nitric Oxide in ug / m3 (NO)</h5>
+                            <input type="number" name="NO" id="NO" required="required" min="0" max="400">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Nitric Dioxide in ug / m3 (NO2)</h5>
+                            <!-- Destination -->
+                            <input type="number" name="NO2" id="NO2" required="required" min="0" max="400">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Any Nitric x-oxide in ppb (NOx)</h5>
+                            <!-- Total Stops -->
+                            <input type="number" name="NOx" id="NOx" required="required" min="0" max="500">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Ammonia in ug / m3 (NH3)</h5>
+                            <!-- Airline -->
+                            <input type="number" name="NH3" id="NH3" required="required" min="0" max="400">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+			<div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Carbon Monoxide in mg / m3 (CO)</h5>
+                            <!-- Departure -->
+                            <input type="number" name="CO" id="CO" required="required" min="0" max="200">
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Sulphur Dioxide in ug / m3 (SO2)</h5>
+                            <!-- Arrival -->
+                            <input type="number" name="SO2" id="SO2" required="required" min="0" max="200">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Source -->
+                            <h5 class="card-title">Ozone in ug / m3 (O3)</h5>
+                            <input type="number" name="O3" id="O3" required="required" min="0" max="300">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Benzene in ug / m3</h5>
+                            <!-- Destination -->
+                            <input type="number" name="Benzene" id="Benzene" required="required" min="0" max="500">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Toluene in ug / m3</h5>
+                            <!-- Total Stops -->
+                            <input type="number" name="Toluene" id="Toluene" required="required" min="0" max="500">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Xylene in ug / m3</h5>
+                            <!-- Airline -->
+                            <input type="number" name="Xylene" id="Xylene" required="required" min="0" max="200">
+                        </div>
+                    </div>
+                </div>
+            </div>
+			
+			<br>
+            <br>
+            <br>
+
+            <!-- Submit -->
+            <input type="submit" value="Predict" class="btn btn-secondary">
+        </form>
+
+        <br>
+        <br>
+        <h3>{{ prediction_text }}</h3> <br/>
+		<h3>{{ prediction_text1 }}</h3>
+
+        <br>
+        <br>
+        <p>©2023</p>
+
+    </div>
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
