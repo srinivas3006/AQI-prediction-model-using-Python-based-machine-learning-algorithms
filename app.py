@@ -35,9 +35,9 @@ def predict():
         position = val_list.index(prediction[0])
         output = key_list[position]
 
-        return render_template('home.html', prediction_text="Predicted Air Quality Class Is : {0}".format(output),prediction_text1="Predicted Air Quality Index is : {0}".format(output2[0]))
+        return render_template('index.html', prediction_text="Predicted Air Quality Class Is : {0}".format(output),prediction_text1="Predicted Air Quality Index is : {0}".format(output2[0]))
 
-    return render_template("home.html")
+    return render_template("index.html")
 
 
 if __name__ == "__main__":
