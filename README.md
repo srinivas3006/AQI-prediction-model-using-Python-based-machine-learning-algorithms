@@ -2,6 +2,15 @@
 
 **Air Quality Index (AQI) Prediction using Machine Learning**
 
+**Prerequisites**
+Python 3.x
+Flask
+Flask-Cors
+Pickle
+
+**Install Dependencies:**
+pip install Flask flask-cors pickle
+
 **Project Overview**
 
 This project aims to develop a machine learning model capable of predicting Air Quality Index (AQI) values based on historical meteorological and air quality data. The model will utilize a combination of data preprocessing, feature engineering, and machine learning algorithms to accurately forecast AQI levels.
